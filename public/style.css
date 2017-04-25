@@ -9,7 +9,7 @@
 body
 {
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-	/background-image:url("images/background.jpg");
+	background-image:url("images/background.jpg");
 }
 
 #container
