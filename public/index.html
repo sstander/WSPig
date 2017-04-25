@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--INFORMATION
+	Sarah Stander
+	WSPig
+	WEB 4200
+	4/19/17
+	<link rel="shortcut icon" type="image/png"  href="images/favicon.ico">
+	<link rel="icon" type="image/png" href="images/favicon.ico">
+End INFORMATION-->
+<html ng-app="WSPig" lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>WS Pig</title>
+	<meta name="description" content="Web Socket Pig">
+	<meta name="author" content="Sarah Stander">
+	<link rel="stylesheet" href="style.css">
+	<!--<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">-->
+</head>
+<body ng-controller="MainController">
+	<div id="container">
+		<h1>Game of Pig</h1>
+
+    <div ng-hide="hideName" name="nameDiv">
+      <label>Name:</label>
+		  <input type="text" ng-model="name" >
+    </div>
+    <button ng-hide="hideJoin" ng-click="join()" id="join" name="join">Join!</button>
+
+    <span ng-show="showWaiting" id="waiting" name="waiting">Waiting for other player...</span>
+
+    <button ng-show="showStart" ng-click="start()" id="start" name="start">Start!</button>
+
+    <div ng-show="showGame" id="game" name="game">
+      <div ng-show="showInstructions" id="instructions" name="instructions">
+        <h2>Instructions</h2>
+    		<div >
+    			Welcome to the Game of Pig. To win, be the
+    			player with the most points at the end of the
+    			game. The game ends at the end of a round where
+    			at least one player has 100 or more points.
+    			<br />
+    			On each turn, you may press 'Roll Die' as many times
+    			as you like to obtain more points. However, if
+    			you roll a 1, your turn is over, and you do not
+    			obtain any points that turn.
+          <br />
+          To end your turn and keep the points you have, press the
+          'End Turn' button.
+    		</div>
+      </div>
+      <button ng-click="infoOnOff()" id="infoOnOffButton" name="infoOnoffButton">{{ showHideInfo }}</button>
+      <br />
+      
+      <br />
+      <span>Player1: </span>
+      <span id="player1Name" name="player1Name">{{ player1Name }}</span>
+      <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPoints: </span>
+      <span id="player1Points" name="player1Points">{{ player1Points }}</span>
+      <br />
+      <span>Player2: </span>
+      <span id="player2Name" name="player2Name">{{ player2Name }}</span>
+      <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPoints: </span>
+      <span id="player2Points" name="player2Points">{{ player2Points }}</span>
+      <br />
+      <span>Player Turn: </span>
+      <span id="playerTurn" name="playerTurn">{{ playerTurn }}</span>
+  		<span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCurrent Turn Points: </span>
+  		<span id="currentTurnPoints" name="currentTurnPoints">{{ currentTurnPoints }}</span>
+      <br />
+      <button ng-click="rollDie()" id="rollButton" name="rollButton">Roll Die</button>
+      <button ng-click="endTurn()" id="endButton" name="endButton">End Turn</button>
+      <br />
+      <br />
+      <br />
+      <div id="Die" name="die">
+        <img src={{die}} alt="die">
+      </div>
+    </div>
+
+    <div ng-show="showEndGame" id="endGame" name="endGame">
+      <span id="winner" name="winner">{{ winner }}</span>
+      <br />
+      <br />
+      <span>Player1: </span>
+      <span>{{ player1Name }}</span>
+      <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPoints: </span>
+      <span>{{ player1Points }}</span>
+      <br />
+      <span>Player2: </span>
+      <span>{{ player2Name }}</span>
+      <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPoints: </span>
+      <span>{{ player2Points }}</span>
+      <br />
+    </div>
+
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+	<script src="app.js"></script>
+	<script src="controller.js"></script>
+	<script src="service.js"></script>
+</body>
+</html>

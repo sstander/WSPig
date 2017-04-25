@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/*
+	Sarah Stander
+	WSPig
+	4/19/2017
+	WEB 4200
+*/
+
+body
+{
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	/background-image:url("images/background.jpg");
+}
+
+#container
+{
+	width:300px;
+	margin:20px auto;
+}
+
+#instructions
+{
+	width:300px;
+}
+
+div img
+{
+	width:150px;
+	height:150px;
+}
+
+#winner
+{
+	font-size: 30px;
+}
