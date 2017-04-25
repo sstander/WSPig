@@ -24,7 +24,7 @@ angular.module('WSPig').controller('MainController', ['$scope', 'PigService', fu
 			$scope.player2Points = message.player2Points;
 			$scope.showInstructions = true;
 			$scope.showHideInfo = "Hide Instructions";
-			$scope.die = "waiting.png";
+			$scope.die = "images/waiting.png";
 		};
 
 		if(message.action == "start") {
