@@ -9,7 +9,9 @@ angular.module('WSPig').service('PigService', [function () {
 	var socket = undefined;
 
 	var onJoin = function (playerName) {
-		socket = new WebSocket('wss://localhost:8080');
+		//socket = new WebSocket('ws://localhost:8080');
+		socket = new WebSocket('wss://ws-pig.herokuapp.com');
+
 
 		socket.onopen = function () {
 			var obj = {};
