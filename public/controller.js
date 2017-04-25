@@ -35,7 +35,7 @@ angular.module('WSPig').controller('MainController', ['$scope', 'PigService', fu
 		};
 
 		if(message.action == "roll") {
-			$scope.die = "images/" + message.roll + ".jpg";
+			$scope.die = "images/" + message.roll + ".png";
 			$scope.currentTurnPoints = message.currentTurnPoints;
 			$scope.playerTurn = message.playerNumber;
 		};
